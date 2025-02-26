@@ -13,7 +13,7 @@ public class ActorDatabaseBuilder {
     public void createFile() {
 
         try {
-            File createTheBaconArmy = new File("MovieData/filename.txt");
+            File createTheBaconArmy = new File(fileName);
             if (createTheBaconArmy.createNewFile()) {
                 System.out.println("File created: " + createTheBaconArmy.getName());
             } else {
@@ -28,7 +28,7 @@ public class ActorDatabaseBuilder {
     public void writeActor(String actorName, int baconNumber) {
         try {
             FileWriter baconWriter = new FileWriter(fileName);
-            baconWriter.write("Kevin Bacon:0");
+            baconWriter.write(actorName + ":" + baconNumber);
             baconWriter.close();
             System.out.println("Successfully wrote to the file.");
         } catch (IOException e) {
