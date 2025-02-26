@@ -16,10 +16,12 @@ public class ActorDatabaseBuilder {
             File createTheBaconArmy = new File(fileName);
             if (createTheBaconArmy.createNewFile()) {
                 System.out.println("File created: " + createTheBaconArmy.getName());
-            } else {
+            }
+            else {
                 System.out.println("File already exists.");
             }
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             System.out.println("Error");
         }
     }
@@ -31,7 +33,8 @@ public class ActorDatabaseBuilder {
             baconWriter.write(actorName + ":" + baconNumber);
             baconWriter.close();
             System.out.println("Successfully wrote to the file.");
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             System.out.println("Error");
         }
     }
