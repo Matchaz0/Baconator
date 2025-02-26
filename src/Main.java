@@ -2,13 +2,11 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-
+        ActorDatabaseBuilder actorDatabaseBuilder = new ActorDatabaseBuilder("MovieData/bacon_actors");
         ArrayList<SimpleMovie> movies = MovieDatabaseBuilder.getMovieDB("MovieData/movie_data");
         for (SimpleMovie movie : movies) {
             System.out.println(movie);
         }
-
-
 
         SimpleMovie movie1 = movies.get(0);
         System.out.println();
@@ -25,5 +23,9 @@ public class Main {
             }
         }
         System.out.println(bacon.size());
+
+        actorDatabaseBuilder.createFile();
+        actorDatabaseBuilder.writeActor("Kevin Bacon", 0);
+
     }
 }
